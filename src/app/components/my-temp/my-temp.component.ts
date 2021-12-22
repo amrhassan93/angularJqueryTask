@@ -12,6 +12,10 @@ export class MyTempComponent implements OnInit ,AfterViewInit{
   ngOnInit(): void {}
 
   ngAfterViewInit() {
+    this.injectScripts(); 
+  }
+
+  public injectScripts(){
     var s = document.createElement("script");
     s.type = "text/javascript";
     s.src = '../../assets/js/main.js';
@@ -38,7 +42,6 @@ export class MyTempComponent implements OnInit ,AfterViewInit{
 
     s.src = '../../assets/vendor/aos/aos.js';
     this.elementRef.nativeElement.appendChild(s);
-   
   }
 
 }
